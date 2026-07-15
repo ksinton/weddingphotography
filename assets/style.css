@@ -1,0 +1,127 @@
+/* ─── Typography ─────────────────────────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'EB Garamond', Georgia, serif;
+}
+
+/* Page fade-in on load */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.fade-in {
+    animation: fadeIn 1.2s ease-in-out forwards;
+}
+
+/* Gallery grid */
+.gallery-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+}
+@media (min-width: 768px) {
+    .gallery-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1024px) {
+    .gallery-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* Gallery hover overlay */
+.gallery-item .overlay {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    background-color: rgba(26, 28, 32, 0.4);
+}
+.gallery-item:hover .overlay { opacity: 1; }
+
+.gallery-item .overlay-content {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.gallery-item:hover .overlay-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Filter link active underline */
+.filter-link { position: relative; }
+.filter-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #136dec;
+}
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Collection view: parallax and image hover */
+.parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.image-hover-wrapper { overflow: hidden; }
+.image-hover-wrapper img { transition: transform 0.6s ease; }
+.image-hover-wrapper:hover img {
+    transform: scale(1.03);
+    cursor: zoom-in;
+}
+
+/* Contact form: minimalist inputs */
+.minimal-input {
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid #8B95A5;
+    color: #2B2D31;
+    padding: 0.75rem 0;
+    font-family: 'Source Sans 3', 'Source Sans Pro', sans-serif;
+    font-size: 1rem;
+    border-radius: 0;
+    transition: all 0.3s;
+}
+.minimal-input::placeholder { color: #8B95A5; }
+.minimal-input:focus {
+    outline: none;
+    border-bottom: 2px solid #111418;
+    box-shadow: none;
+}
+.minimal-input.error { border-bottom: 2px solid #111418; }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px #F7F8F9 inset !important;
+    -webkit-text-fill-color: #2B2D31 !important;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
+/* ─── Home-page hero carousel ─────────────────────────────────────────────────
+   The two crossfading slides. All slide styling lives here (no Tailwind utility
+   classes on these elements), so you can read and tweak it directly.           */
+.hero-slide {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%; /* default; each .hero-pos-N below overrides it */
+    transition: opacity 1s ease-in-out;
+}
+
+/* Per-image position. Each .hero-pos-N matches image N in index.php $hero_mobile
+   (image 1 → .hero-pos-1, …). Edit background-position to frame each photo:
+       1st value = horizontal  (0% left · 50% center · 100% right)
+       2nd value = vertical    (0% top  · 50% center · 100% bottom)            */
+.hero-pos-center { background-position: 50% 50%; } /* desktop + default */
+.hero-pos-1 { background-position: 52% 50%; }
+.hero-pos-2 { background-position: 63% 50%; }
+.hero-pos-3 { background-position: 23% 50%; }
+.hero-pos-4 { background-position: 39% 50%; }
+.hero-pos-5 { background-position: 24% 50%; }
+.hero-pos-6 { background-position: 22% 50%; }
