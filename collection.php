@@ -85,7 +85,9 @@ foreach ($g['sections'] as $sec) {
     foreach ($sec['images'] as $img) $all_images[] = $img;
 }
 
-$page_title  = 'Photography — ' . html_entity_decode($g['title']);
+$page_title  = html_entity_decode($g['title']) . ' Wedding Photography | Kim Sinton';
+$meta_description = html_entity_decode(strip_tags($g['description']));
+$meta_keywords = html_entity_decode($g['title']) . ' wedding photography, wedding photographer, Iowa wedding photographer, Kim Sinton';
 $current_page = 'galleries';
 include 'includes/header.php';
 ?>
@@ -131,7 +133,7 @@ include 'includes/header.php';
                 <div class="break-inside-avoid cursor-pointer overflow-hidden rounded-sm group"
                      onclick="openLightbox(<?= $idx ?>)">
                     <img src="<?= htmlspecialchars($img) ?>"
-                         alt="Wedding photography"
+                         alt="<?= htmlspecialchars(html_entity_decode($g['subtitle'])) ?> — wedding photography by Kim Sinton"
                          loading="lazy"
                          class="w-full block transition-transform duration-500 group-hover:scale-[1.03]"/>
                 </div>

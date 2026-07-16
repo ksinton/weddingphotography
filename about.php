@@ -1,5 +1,7 @@
 <?php
-$page_title = 'Photography — About';
+$page_title = 'About Kim Sinton | Iowa Wedding Photographer';
+$meta_description = 'Meet Kim Sinton — a wedding photographer with 20 years of experience capturing candid, natural-light weddings and elopements across Iowa and Northern Missouri.';
+$meta_keywords = 'Iowa wedding photographer, about Kim Sinton, candid wedding photographer, natural light wedding photography, experienced wedding photographer Iowa, Iowa City wedding photographer';
 $current_page = 'about';
 include 'includes/header.php';
 ?>
@@ -9,7 +11,7 @@ include 'includes/header.php';
         <div class="flex flex-col gap-8">
             <span class="text-text-muted text-xs font-medium uppercase tracking-[0.1em]">About Kim</span>
             <h1 class="text-text-main text-4xl md:text-5xl lg:text-6xl font-bold tracking-tighter leading-[1.05]">
-                Candid storytelling,<br/>in beautiful natural light.
+                Candid storytelling from an<br/>Iowa City Photographer,<br/>in beautiful natural light.
             </h1>
             <p class="text-text-main text-lg leading-relaxed">
                 For me, wedding photography begins with candid storytelling — the unscripted glances, the laughter, the quiet breath before a first look. After twenty years behind the camera, photographing a wide range of weddings across many different styles and settings, I still feel genuine excitement for every couple and every story I get to document. Those honest, in-between moments are what make each day unrepeatable, and capturing them is the part I love most.

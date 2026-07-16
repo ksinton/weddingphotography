@@ -1,5 +1,7 @@
 <?php
-$page_title = 'Photography — Pricing';
+$page_title = 'Wedding Photography Pricing | Iowa & Northern Missouri — Kim Sinton';
+$meta_description = 'Wedding photography packages and pricing for Iowa and Northern Missouri — from elopements to full-day coverage in Iowa City, Des Moines, Burlington and Fairfield.';
+$meta_keywords = 'wedding photography pricing, Iowa wedding photographer pricing, wedding packages Iowa, Des Moines wedding photography prices, Burlington wedding photographer, elopement photographer Iowa';
 $current_page = 'pricing';
 include 'includes/header.php';
 ?>
@@ -8,6 +10,7 @@ include 'includes/header.php';
     <!-- Page Header -->
     <section class="bg-surface border-b border-[#8B95A5]/20 py-6 md:py-8 px-6 text-center">
         <div class="max-w-5xl mx-auto flex flex-col gap-4">
+            <h1 class="text-text-main text-2xl md:text-3xl font-bold tracking-tight">Wedding Photography Pricing in Iowa &amp; Northern Missouri</h1>
             <p class="text-text-main text-base md:text-lg leading-relaxed max-w-4xl mx-auto">
                 Every wedding is different, and my collections are designed to flex with yours. If you'd like a custom album, a second photographer, or coverage tailored to your day, I welcome the conversation — reach out any time to discuss the options.
             </p>
@@ -167,7 +170,7 @@ include 'includes/header.php';
     <!-- CTA -->
     <section class="bg-background-light py-16 px-6 text-center border-t border-[#8B95A5]/20">
         <div class="max-w-3xl mx-auto flex flex-col items-center gap-6">
-            <h2 class="text-text-main text-3xl md:text-5xl font-bold leading-tight">Ready to get started?</h2>
+            <h1 class="text-text-main text-3xl md:text-5xl font-bold leading-tight">Ready to start your Iowa wedding photography?</h1>
             <p class="text-text-muted text-base lg:text-lg max-w-xl">I take on a limited number of weddings each year — reach out early to check your date.</p>
             <a class="inline-flex min-w-[160px] items-center justify-center rounded-sm h-14 px-10 bg-text-main text-white text-sm font-bold uppercase tracking-[0.04em] transition-colors hover:bg-primary mt-4" href="contact.php">Inquire Now</a>
         </div>

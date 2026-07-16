@@ -1,5 +1,7 @@
 <?php
-$page_title = 'Photography — Contact';
+$page_title = 'Contact | Iowa Wedding Photographer — Kim Sinton';
+$meta_description = 'Contact Iowa wedding photographer Kim Sinton to check availability for your wedding or elopement in Iowa City, Des Moines, Burlington or Northern Missouri.';
+$meta_keywords = 'contact wedding photographer Iowa, book Iowa wedding photographer, Iowa City wedding photographer, Des Moines wedding photographer contact';
 $current_page = 'contact';
 include 'includes/header.php';
 ?>
@@ -9,7 +11,7 @@ include 'includes/header.php';
         <div class="absolute inset-0 bg-gradient-to-br from-background-light/50 to-transparent pointer-events-none opacity-50"></div>
         <div class="relative z-10 max-w-xl">
             <h1 class="font-display font-bold text-5xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tighter text-text-main mb-8">
-                Let's create<br/>something<br/>beautiful.
+                Let's create your<br/>Iowa wedding<br/>story.
             </h1>
             <p class="text-text-main/80 text-lg max-w-md leading-relaxed mb-12">
                 I'd love to hear about your wedding. My style is relaxed and easygoing on the day, yet always thoroughly professional behind the camera — and I'm glad to talk through your ideas, locations, and options. Reach out any time; I look forward to hearing from you.
@@ -38,7 +40,18 @@ include 'includes/header.php';
                 <h2 class="font-display font-bold text-2xl text-text-main tracking-tight mb-2">Tell me about your day</h2>
                 <p class="text-[#8B95A5] text-sm">Please provide as much detail as possible.</p>
             </div>
-            <form action="#" class="space-y-10" method="POST">
+            <?php if (isset($_GET['error'])): ?>
+            <div class="mb-8 border border-[#b91c1c]/30 bg-[#b91c1c]/5 text-[#b91c1c] text-sm rounded-sm px-4 py-3">
+                Sorry — your message couldn't be sent. Please check that you entered your name, a valid email, and a short message, then try again.
+            </div>
+            <?php endif; ?>
+            <form id="inquiry-form" action="send.php" class="space-y-10" method="POST" novalidate>
+                <!-- Honeypot: hidden from people, often filled by bots -->
+                <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
+                    <label>Leave this field empty <input type="text" name="website" tabindex="-1" autocomplete="off"/></label>
+                </div>
+                <input type="hidden" name="form_started" id="form_started" value=""/>
+                <div id="form-errors" class="hidden mb-2 text-[#b91c1c] text-sm font-medium"></div>
                 <div class="space-y-8">
                     <div>
                         <label class="sr-only" for="name">Full Name</label>
@@ -73,4 +86,29 @@ include 'includes/header.php';
         </div>
     </section>
 </main>
+<script>
+(function () {
+    var form = document.getElementById('inquiry-form');
+    if (!form) return;
+    var started = document.getElementById('form_started');
+    if (started) started.value = Date.now();
+    form.addEventListener('submit', function (e) {
+        var nameEl = form.querySelector('#name');
+        var emailEl = form.querySelector('#email');
+        var msgEl = form.querySelector('#message');
+        var errs = [];
+        if (!nameEl.value.trim()) errs.push('Please enter your name.');
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value.trim())) errs.push('Please enter a valid email address.');
+        if (!msgEl.value.trim()) errs.push('Please add a short message about your day.');
+        var box = document.getElementById('form-errors');
+        if (errs.length) {
+            e.preventDefault();
+            box.textContent = errs[0];
+            box.classList.remove('hidden');
+            var target = errs[0].indexOf('name') > -1 ? nameEl : (errs[0].indexOf('email') > -1 ? emailEl : msgEl);
+            target.focus();
+        }
+    });
+})();
+</script>
 <?php include 'includes/footer.php'; ?>

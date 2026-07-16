@@ -1,5 +1,7 @@
 <?php
-$page_title = 'Photography — Galleries';
+$page_title = 'Wedding Photography Galleries | Iowa & Northern Missouri — Kim Sinton';
+$meta_description = 'Browse wedding photography galleries by Kim Sinton — real weddings and elopements across the Midwest, Iowa, and beyond.';
+$meta_keywords = 'wedding photography galleries, Iowa wedding photos, Midwest wedding photography, wedding portfolio Iowa, Kim Sinton photography';
 $current_page = 'galleries';
 include 'includes/header.php';
 ?>
@@ -8,8 +10,8 @@ include 'includes/header.php';
     <!-- Page Header -->
     <section class="bg-surface border-b border-[#8B95A5]/20 pt-12 pb-8 px-6 text-center">
         <div class="max-w-3xl mx-auto flex flex-col gap-4">
-            <h1 class="text-text-main text-4xl md:text-6xl font-bold tracking-tighter leading-tight">Galleries</h1>
-            <p class="text-text-muted text-lg leading-relaxed">Real couples. Real moments. Every image tells a story.</p>
+            <h1 class="text-text-main text-4xl md:text-6xl font-bold tracking-tighter leading-tight">Wedding Photography Galleries</h1>
+            <p class="hidden md:block text-text-muted text-lg leading-relaxed">Real couples. Real moments. Every image tells a story.</p>
         </div>
     </section>
 
@@ -96,7 +98,8 @@ include 'includes/header.php';
     <!-- CTA -->
     <section class="bg-surface py-24 px-6 text-center border-t border-[#8B95A5]/20">
         <div class="max-w-3xl mx-auto flex flex-col items-center gap-8">
-            <h2 class="text-text-main text-3xl md:text-5xl font-bold leading-tight">Ready to create something timeless?</h2>
+            <h1 class="text-text-main text-3xl md:text-5xl font-bold leading-tight">From Hawaii to the Heartland — Des Moines Photography that stands the test of time.</h1>
+            <p class="text-text-muted text-base lg:text-lg max-w-xl">Wherever the wedding, the approach is the same: honest moments, beautiful light.</p>
             <a class="inline-flex min-w-[160px] items-center justify-center rounded-sm h-14 px-10 bg-text-main text-white text-sm font-bold uppercase tracking-[0.04em] transition-colors hover:bg-primary mt-4" href="contact.php">Inquire Now</a>
         </div>
     </section>

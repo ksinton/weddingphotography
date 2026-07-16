@@ -1,5 +1,7 @@
 <?php
-$page_title = 'Photography — Home';
+$page_title = 'Iowa Wedding Photographer | Iowa City, Des Moines & Burlington — Kim Sinton';
+$meta_description = 'Kim Sinton is an Iowa wedding photographer capturing candid, natural-light weddings and elopements in Iowa City, Des Moines, Burlington, Fairfield and Northern Missouri.';
+$meta_keywords = 'Iowa wedding photographer, wedding photography Iowa, Iowa City wedding photographer, Des Moines wedding photographer, Burlington Iowa wedding photographer, Fairfield wedding photographer, Northern Missouri wedding photographer, candid wedding photography, natural light wedding photographer, elopement photographer Iowa';
 $current_page = 'home';
 
 // Pick the hero image set server-side so the browser only downloads the matching set.
@@ -123,7 +125,8 @@ include 'includes/header.php';
     <!-- CTA -->
     <section class="bg-background-light py-24 px-6 text-center border-t border-[#f0f2f4]">
         <div class="max-w-3xl mx-auto flex flex-col items-center gap-8">
-            <h2 class="text-text-main text-3xl md:text-5xl font-bold leading-tight">Ready to create something timeless?</h2>
+            <h1 class="text-text-main text-3xl md:text-5xl font-bold leading-tight">Iowa City Photography, with a world of weddings behind it.</h1>
+            <p class="text-text-muted text-base lg:text-lg max-w-xl">Twenty years of candid, natural-light storytelling — now booking weddings across Iowa.</p>
             <a class="inline-flex min-w-[160px] items-center justify-center rounded-sm h-14 px-10 bg-text-main text-white text-sm font-bold uppercase tracking-[0.04em] transition-colors hover:bg-primary mt-4" href="contact.php">Inquire Now</a>
         </div>
     </section>

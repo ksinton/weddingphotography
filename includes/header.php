@@ -1,6 +1,15 @@
 <?php
-$page_title = $page_title ?? 'Photography';
+$page_title = $page_title ?? 'Kim Sinton Wedding Photography — Iowa & Northern Missouri';
 $current_page = $current_page ?? '';
+
+// ─── SEO (individual pages may set these before including this file) ──────────
+$site_name        = 'Kim Sinton Wedding Photography';
+$meta_description = $meta_description ?? 'Kim Sinton is a wedding photographer serving Iowa and Northern Missouri — Iowa City, Des Moines, Burlington, Fairfield and beyond. Candid, natural-light wedding and elopement photography.';
+$meta_keywords   = $meta_keywords ?? 'wedding photographer, wedding photography, Iowa wedding photographer, Iowa City wedding photographer, Des Moines wedding photographer, Burlington Iowa wedding photographer, Fairfield Iowa wedding photographer, Northern Missouri wedding photographer, candid wedding photography, natural light wedding photography, elopement photographer';
+$meta_robots     = $meta_robots ?? 'index, follow';
+$seo_scheme      = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https' : 'http';
+$canonical_url   = $seo_scheme . '://' . ($_SERVER['HTTP_HOST'] ?? 'kimsinton.com') . strtok($_SERVER['REQUEST_URI'] ?? '/', '?');
+
 function nav_class($page, $current) {
     $base = 'text-base lg:text-lg leading-normal uppercase tracking-wider transition-colors';
     if ($page === $current) {
@@ -15,6 +24,23 @@ function nav_class($page, $current) {
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title><?= htmlspecialchars($page_title) ?></title>
+<meta name="description" content="<?= htmlspecialchars($meta_description) ?>"/>
+<meta name="keywords" content="<?= htmlspecialchars($meta_keywords) ?>"/>
+<meta name="author" content="Kim Sinton"/>
+<meta name="robots" content="<?= htmlspecialchars($meta_robots) ?>"/>
+<meta name="geo.region" content="US-IA"/>
+<meta name="geo.placename" content="Iowa City, Iowa"/>
+<link rel="canonical" href="<?= htmlspecialchars($canonical_url) ?>"/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="<?= htmlspecialchars($site_name) ?>"/>
+<meta property="og:title" content="<?= htmlspecialchars($page_title) ?>"/>
+<meta property="og:description" content="<?= htmlspecialchars($meta_description) ?>"/>
+<meta property="og:url" content="<?= htmlspecialchars($canonical_url) ?>"/>
+<meta property="og:locale" content="en_US"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Kim Sinton Wedding Photography","description":"Candid, natural-light wedding and elopement photography serving Iowa and Northern Missouri.","image":"https://kimsinton.com/images/logo/2-transparent-horizontal-black.svg","url":"https://kimsinton.com/","telephone":"+1-408-824-8917","email":"kimsinton@gmail.com","priceRange":"$$","address":{"@type":"PostalAddress","addressLocality":"Iowa City","addressRegion":"IA","addressCountry":"US"},"areaServed":[{"@type":"City","name":"Iowa City"},{"@type":"City","name":"Des Moines"},{"@type":"City","name":"Burlington"},{"@type":"City","name":"Fairfield"},{"@type":"State","name":"Iowa"},{"@type":"AdministrativeArea","name":"Northern Missouri"}],"knowsAbout":["Wedding Photography","Elopement Photography","Engagement Photography","Natural Light Photography"]}
+</script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;600;700&display=swap" rel="stylesheet"/>
