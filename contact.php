@@ -40,18 +40,22 @@ include 'includes/header.php';
                 <h2 class="font-display font-bold text-2xl text-text-main tracking-tight mb-2">Tell me about your day</h2>
                 <p class="text-[#8B95A5] text-sm">Please provide as much detail as possible.</p>
             </div>
-            <?php if (isset($_GET['error'])): ?>
-            <div class="mb-8 border border-[#b91c1c]/30 bg-[#b91c1c]/5 text-[#b91c1c] text-sm rounded-sm px-4 py-3">
-                Sorry — your message couldn't be sent. Please check that you entered your name, a valid email, and a short message, then try again.
-            </div>
-            <?php endif; ?>
-            <form id="inquiry-form" action="send.php" class="space-y-10" method="POST" novalidate>
-                <!-- Honeypot: hidden from people, often filled by bots -->
-                <div style="position:absolute;left:-9999px;top:-9999px;" aria-hidden="true">
-                    <label>Leave this field empty <input type="text" name="website" tabindex="-1" autocomplete="off"/></label>
-                </div>
-                <input type="hidden" name="form_started" id="form_started" value=""/>
+            <form id="inquiry-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-10">
+
+                <!-- ▼▼▼ PASTE YOUR WEB3FORMS ACCESS KEY BETWEEN THE QUOTES BELOW ▼▼▼ -->
+                <input type="hidden" name="access_key" value="98e4ffc5-dedc-48ad-8506-0916f52dd1c6"/>
+                <!-- ▲▲▲ (get it free at web3forms.com — the key is tied to kimsinton@gmail.com) ▲▲▲ -->
+
+                <!-- Email subject line and sender label shown in your inbox -->
+                <input type="hidden" name="subject" value="New wedding inquiry from your website"/>
+                <input type="hidden" name="from_name" value="Kim Sinton Website"/>
+                <!-- Where visitors land after a successful submit -->
+                <input type="hidden" name="redirect" value="https://kimsinton.com/thank-you.php"/>
+                <!-- Honeypot: Web3Forms silently blocks bots that tick this -->
+                <input type="checkbox" name="botcheck" class="hidden" style="display:none !important;" tabindex="-1" autocomplete="off"/>
+
                 <div id="form-errors" class="hidden mb-2 text-[#b91c1c] text-sm font-medium"></div>
+
                 <div class="space-y-8">
                     <div>
                         <label class="sr-only" for="name">Full Name</label>
@@ -72,10 +76,6 @@ include 'includes/header.php';
                         <input class="minimal-input" id="location" name="location" placeholder="Location or Venue" type="text"/>
                     </div>
                 </div>
-                <div class="pt-4">
-                    <label class="sr-only" for="message">Your Vision</label>
-                    <textarea class="minimal-input resize-none" id="message" name="message" placeholder="Tell me about your vision, the mood, and what drew you to my work..." rows="4"></textarea>
-                </div>
                 <div class="pt-8">
                     <button class="w-full bg-text-main text-white font-display font-bold uppercase tracking-widest text-sm h-14 flex items-center justify-center hover:bg-accent transition-colors duration-300 rounded group" type="submit">
                         <span class="group-hover:-translate-y-0.5 transition-transform duration-300 inline-block">Submit Inquiry</span>
@@ -90,23 +90,18 @@ include 'includes/header.php';
 (function () {
     var form = document.getElementById('inquiry-form');
     if (!form) return;
-    var started = document.getElementById('form_started');
-    if (started) started.value = Date.now();
     form.addEventListener('submit', function (e) {
         var nameEl = form.querySelector('#name');
         var emailEl = form.querySelector('#email');
-        var msgEl = form.querySelector('#message');
         var errs = [];
         if (!nameEl.value.trim()) errs.push('Please enter your name.');
         if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value.trim())) errs.push('Please enter a valid email address.');
-        if (!msgEl.value.trim()) errs.push('Please add a short message about your day.');
         var box = document.getElementById('form-errors');
         if (errs.length) {
             e.preventDefault();
             box.textContent = errs[0];
             box.classList.remove('hidden');
-            var target = errs[0].indexOf('name') > -1 ? nameEl : (errs[0].indexOf('email') > -1 ? emailEl : msgEl);
-            target.focus();
+            (errs[0].indexOf('name') > -1 ? nameEl : emailEl).focus();
         }
     });
 })();
