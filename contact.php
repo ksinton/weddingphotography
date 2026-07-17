@@ -38,7 +38,7 @@ include 'includes/header.php';
         <div class="w-full max-w-md relative z-10">
             <div class="mb-12">
                 <h2 class="font-display font-bold text-2xl text-text-main tracking-tight mb-2">Tell me about your day</h2>
-                <p class="text-[#8B95A5] text-sm">Please provide as much detail as possible.</p>
+                <p class="text-[#8B95A5] text-sm">Just your name and email to get started — everything else is optional.</p>
             </div>
             <form id="inquiry-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-10">
 
@@ -59,22 +59,30 @@ include 'includes/header.php';
                 <div class="space-y-8">
                     <div>
                         <label class="sr-only" for="name">Full Name</label>
-                        <input class="minimal-input" id="name" name="name" placeholder="Your Name" required type="text"/>
+                        <input class="minimal-input" id="name" name="name" placeholder="Your name" required type="text"/>
                     </div>
                     <div>
                         <label class="sr-only" for="email">Email Address</label>
-                        <input class="minimal-input" id="email" name="email" placeholder="Email Address" required type="email"/>
+                        <input class="minimal-input" id="email" name="email" placeholder="Email address" required type="email"/>
+                    </div>
+                    <div>
+                        <label class="sr-only" for="phone">Phone Number (optional)</label>
+                        <input class="minimal-input" id="phone" name="phone" placeholder="Phone number (optional)" type="tel"/>
                     </div>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
                     <div>
-                        <label class="sr-only" for="date">Event Date</label>
-                        <input class="minimal-input" id="date" name="date" placeholder="Proposed Date (MM/DD/YYYY)" type="text"/>
+                        <label class="sr-only" for="date">Wedding Date (optional)</label>
+                        <input class="minimal-input" id="date" name="date" placeholder="Wedding date (optional)" type="text"/>
                     </div>
                     <div>
-                        <label class="sr-only" for="location">Location / Venue</label>
-                        <input class="minimal-input" id="location" name="location" placeholder="Location or Venue" type="text"/>
+                        <label class="sr-only" for="location">Location / Venue (optional)</label>
+                        <input class="minimal-input" id="location" name="location" placeholder="Location or venue (optional)" type="text"/>
                     </div>
+                </div>
+                <div class="pt-4">
+                    <label class="sr-only" for="message">About your wedding (optional)</label>
+                    <textarea class="minimal-input resize-none" id="message" name="message" rows="4" placeholder="Tell me a little about your wedding — the vibe, your plans, anything you'd like me to know (optional)"></textarea>
                 </div>
                 <div class="pt-8">
                     <button class="w-full bg-text-main text-white font-display font-bold uppercase tracking-widest text-sm h-14 flex items-center justify-center hover:bg-accent transition-colors duration-300 rounded group" type="submit">
