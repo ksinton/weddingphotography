@@ -89,19 +89,19 @@ include 'includes/header.php';
                 </div>
                 <div class="border-t border-[#8B95A5]/20 pt-4 flex items-baseline gap-2">
                     <span class="text-text-main text-4xl font-bold tracking-tighter">$3,200</span>
-                    <span class="text-text-muted text-sm">· up to 10 hrs</span>
+                    <span class="text-text-muted text-sm">· no time limit for a single day</span>
                 </div>
                 <button type="button" class="feature-toggle inline-flex items-center justify-center gap-1.5 h-11 px-5 rounded-sm border border-primary text-primary text-xs font-bold uppercase tracking-[0.08em] transition-colors hover:bg-primary hover:text-white" aria-expanded="false">
                     <span class="toggle-label">See what's included</span>
                     <span class="material-symbols-outlined text-base leading-none">expand_more</span>
                 </button>
                 <ul class="feature-list hidden flex flex-col gap-3 text-sm text-text-main">
-                    <li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span> Up to 10 hours of shooting</li>
+                    <li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span> A full day of shooting (no time limit)</li>
                     <li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span> Photos delivered digitally through Dropbox</li>
                     <li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span> Raw photos available upon request at no additional cost</li>
                     <li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span> Includes album design</li>
                     <li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span> Includes 2 premium 12&times;12 albums (contact me for additional albums or other options)</li>
-                    <li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span> Photo editing &amp; sorting (roughly 20 hours)</li>
+                    <li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span> Photo editing &amp; sorting (roughly 24 hours)</li>
                     <li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span> Wedding planning session</li>
                     <li class="flex items-start gap-3"><span class="material-symbols-outlined text-primary text-base mt-0.5">check</span> All travel time included (remote locations may incur travel fees)</li>
                 </ul>
